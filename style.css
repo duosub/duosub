@@ -15,7 +15,7 @@ body {
 header {
     background: linear-gradient(135deg, #1e293b 0%, #0f172a 100%);
     color: white;
-    padding: 2rem 10%;
+    padding: 3rem 10%;
     text-align: center;
 }
 
@@ -35,6 +35,7 @@ nav {
     border-radius: 5px;
     text-decoration: none;
     font-weight: bold;
+    margin-left: 10px;
 }
 
 .hero h1 { font-size: 2.5rem; margin-bottom: 1rem; }
@@ -52,11 +53,37 @@ nav {
     padding: 1.5rem;
     border-radius: 8px;
     box-shadow: 0 4px 6px rgba(0,0,0,0.05);
+    text-align: center;
 }
 
-section { padding: 3rem 10%; border-bottom: 1px solid #e2e8f0; }
+section { padding: 3rem 10%; border-bottom: 1px solid #e2e8f0; text-align: center; }
 
 h2 { border-bottom: 3px solid var(--primary); display: inline-block; margin-bottom: 1.5rem; }
+
+.lang-list-view {
+    font-size: 0.8rem;
+    color: var(--dark);
+    opacity: 0.8;
+    text-align: left;
+    columns: 3;
+    gap: 20px;
+    background: #fff;
+    padding: 20px;
+    border-radius: 8px;
+    margin-top: 20px;
+    border: 1px solid #e2e8f0;
+}
+
+.btn-download {
+    display: inline-block;
+    background: #10b981;
+    color: white;
+    padding: 0.8rem 1.5rem;
+    border-radius: 6px;
+    text-decoration: none;
+    font-weight: bold;
+    margin-top: 15px;
+}
 
 .btn-disabled {
     display: inline-block;
@@ -74,26 +101,11 @@ footer {
     color: white;
     padding: 3rem 10%;
     text-align: center;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
 }
 
 @media (max-width: 768px) {
     .hero h1 { font-size: 1.8rem; }
     header, section { padding: 2rem 5%; }
-}
-.btn-download {
-    display: inline-block;
-    background: #10b981; /* Зеленый цвет для скачивания */
-    color: white;
-    padding: 0.8rem 1.5rem;
-    border-radius: 6px;
-    text-decoration: none;
-    font-weight: bold;
-    margin-top: 15px;
-    transition: background 0.2s;
-}
-.btn-download:hover {
-    background: #059669;
+    nav { flex-direction: column; gap: 20px; }
+    .lang-list-view { columns: 1; }
 }
