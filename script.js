@@ -1,13 +1,13 @@
-// Logs to verify script is running
-console.log("Duosub SRT landing page loaded.");
+const yearEl = document.getElementById("year");
+if (yearEl) {
+    yearEl.textContent = new Date().getFullYear();
+}
 
-// Smooth scrolling for navigation links
 document.querySelectorAll('a[href^="#"]').forEach(anchor => {
     anchor.addEventListener('click', function (e) {
         const targetId = this.getAttribute('href');
+        if (targetId === "#") return;
         const targetElement = document.querySelector(targetId);
-        
-        // Check if element exists to avoid "null" errors
         if (targetElement) {
             e.preventDefault();
             targetElement.scrollIntoView({
@@ -16,3 +16,5 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
         }
     });
 });
+
+console.log("DuoSub Subtitle Creator Loaded");
