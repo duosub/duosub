@@ -19,7 +19,6 @@ header {
     text-align: center;
 }
 
-/* Navigation */
 nav {
     display: flex;
     justify-content: space-between;
@@ -31,11 +30,6 @@ nav {
     height: 50px;
     width: auto;
     display: block;
-    transition: 0.5s;
-}
-
-.logo-link:hover .logo-image {
-    opacity: 0.8;
 }
 
 .btn-top {
@@ -46,11 +40,6 @@ nav {
     text-decoration: none;
     font-weight: bold;
     margin-left: 10px;
-    transition: 0.3s;
-}
-
-.btn-top:hover {
-    opacity: 0.9;
 }
 
 .btn-outline {
@@ -58,9 +47,45 @@ nav {
     border: 1px solid var(--primary);
 }
 
-/* Hero Section */
 .hero h1 { font-size: 2.5rem; margin-bottom: 1rem; }
 .hero strong { color: #60a5fa; }
+
+/* YouTube Container */
+.video-container {
+    position: relative;
+    padding-bottom: 56.25%;
+    height: 0;
+    overflow: hidden;
+    max-width: 850px;
+    margin: 30px auto;
+    border-radius: 12px;
+    background: #000;
+}
+
+.video-container iframe {
+    position: absolute;
+    top: 0; left: 0; width: 100%; height: 100%; border: 0;
+}
+
+/* SEO Players Block (Single block, no borders) */
+.seo-players-block {
+    text-align: left;
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 20px;
+    background: #fff;
+    border-radius: 8px;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.03);
+}
+
+.seo-players-block p {
+    font-size: 1rem;
+    color: #475569;
+}
+
+.seo-players-block strong {
+    color: var(--primary);
+}
 
 /* Grids & Cards */
 .grid, .install-grid {
@@ -72,14 +97,13 @@ nav {
 
 .card {
     background: white;
-    padding: 1.5rem;
-    border-radius: 8px;
+    padding: 2rem;
+    border-radius: 12px;
     box-shadow: 0 4px 6px rgba(0,0,0,0.05);
-    text-align: center;
 }
 
 section { 
-    padding: 3rem 10%; 
+    padding: 4rem 10%; 
     border-bottom: 1px solid #e2e8f0; 
     text-align: center; 
 }
@@ -87,60 +111,42 @@ section {
 h2 { 
     border-bottom: 3px solid var(--primary); 
     display: inline-block; 
-    margin-bottom: 1.5rem; 
+    margin-bottom: 2rem; 
 }
 
-/* Languages list */
 .lang-list-view {
     font-size: 0.8rem;
-    color: var(--dark);
-    opacity: 0.8;
-    text-align: left;
     columns: 3;
-    gap: 20px;
+    gap: 30px;
     background: #fff;
     padding: 20px;
     border-radius: 8px;
-    margin-top: 20px;
+    text-align: left;
     border: 1px solid #e2e8f0;
 }
 
-/* Active Buttons */
 .btn-store, .btn-download {
     display: inline-block;
     color: white;
-    padding: 0.8rem 1.5rem;
+    padding: 0.8rem 1.8rem;
     border-radius: 6px;
     text-decoration: none;
     font-weight: bold;
     margin-top: 15px;
-    transition: 0.3s;
 }
 
-.btn-store {
-    background: var(--primary);
-}
-
-.btn-download {
-    background: #10b981;
-}
-
-.btn-store:hover, .btn-download:hover {
-    filter: brightness(1.1);
-    transform: translateY(-2px);
-}
+.btn-store { background: var(--primary); }
+.btn-download { background: #10b981; }
 
 footer {
     background: #1e293b;
     color: white;
-    padding: 3rem 10%;
+    padding: 4rem 10%;
     text-align: center;
 }
 
-/* Mobile Responsive */
 @media (max-width: 768px) {
-    .hero h1 { font-size: 1.8rem; }
-    header, section { padding: 2rem 5%; }
+    header, section { padding: 3rem 5%; }
     nav { flex-direction: column; gap: 20px; }
     .lang-list-view { columns: 1; }
 }
