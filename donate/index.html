@@ -27,26 +27,37 @@
             -webkit-font-smoothing: antialiased;
         }
 
-        .container { max-width: 460px; width: 100%; text-align: center; }
+        .container { max-width: 440px; width: 100%; text-align: center; }
         
         .payment-card { 
             background: #ffffff; 
             border-radius: 24px; 
             padding: 45px;
             box-shadow: 0 15px 35px rgba(0, 0, 0, 0.03);
-            border: 1px solid rgba(0,0,0,0.02);
+            border: 1px solid rgba(0,0,0,0.01);
             text-align: left;
         }
 
-        h1 { font-size: 26px; font-weight: 600; margin: 0 0 12px 0; letter-spacing: -0.5px; text-align: center; color: #111; }
-        .subtitle { color: var(--text-muted); font-size: 15px; margin-bottom: 35px; text-align: center; line-height: 1.6; font-weight: 400; }
+        h1 { font-size: 24px; font-weight: 600; margin: 0 0 12px 0; letter-spacing: -0.5px; text-align: center; color: #111; }
+        .subtitle { color: var(--text-muted); font-size: 14px; margin-bottom: 30px; text-align: center; line-height: 1.6; font-weight: 400; }
 
-        .goal-container { margin-bottom: 30px; background: #f8fafc; padding: 18px; border-radius: 16px; border: 1px solid #edf2f7; }
-        .goal-header { display: flex; justify-content: space-between; font-size: 11px; font-weight: 500; text-transform: uppercase; letter-spacing: 1.2px; margin-bottom: 12px; color: var(--text-muted); }
-        .progress-bg { background: #e2e8f0; height: 6px; border-radius: 10px; overflow: hidden; }
-        .progress-bar { background: var(--primary); width: 84%; height: 100%; border-radius: 10px; }
+       
+        .status-badge {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 8px;
+            background: #f0f7ff;
+            color: var(--primary);
+            padding: 10px;
+            border-radius: 12px;
+            font-size: 12px;
+            font-weight: 500;
+            margin-bottom: 25px;
+        }
 
-        .amount-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 12px; margin-bottom: 20px; }
+       
+        .amount-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 10px; margin-bottom: 20px; }
         .amount-btn { 
             border: 1px solid var(--border); 
             background: #fff; 
@@ -61,6 +72,7 @@
         .amount-btn:hover { border-color: var(--primary); color: var(--primary); }
         .amount-btn.active { border-color: var(--primary); background: var(--primary); color: #fff; }
 
+      
         .input-wrapper { position: relative; margin-bottom: 30px; }
         .input-field { 
             width: 100%; 
@@ -72,11 +84,11 @@
             font-weight: 500; 
             text-align: center;
             transition: all 0.2s ease;
-            color: var(--text-main);
         }
-        .input-field:focus { border-color: var(--primary); outline: none; box-shadow: 0 0 0 4px rgba(0, 122, 255, 0.08); }
+        .input-field:focus { border-color: var(--primary); outline: none; }
         .currency-symbol { position: absolute; left: 20px; top: 50%; transform: translateY(-50%); color: #a3acb9; font-weight: 500; font-size: 18px; }
 
+        
         .pay-btn { 
             display: block; 
             width: 100%; 
@@ -90,42 +102,56 @@
             font-size: 17px;
             transition: all 0.2s ease;
         }
-        .pay-btn:hover { background: var(--primary-hover); transform: translateY(-1px); box-shadow: 0 5px 15px rgba(0, 122, 255, 0.2); }
+        .pay-btn:hover { background: var(--primary-hover); transform: translateY(-1px); box-shadow: 0 5px 15px rgba(0, 122, 255, 0.1); }
 
-        .secure-info { display: flex; align-items: center; justify-content: center; gap: 10px; margin-top: 35px; padding-top: 25px; border-top: 1px solid #f8fafc; }
-        .dot { width: 8px; height: 8px; background: #34c759; border-radius: 50%; animation: pulse 2s infinite; }
-        @keyframes pulse { 0% { opacity: 1; } 50% { opacity: 0.5; } 100% { opacity: 1; } }
+       
+        .secure-footer { 
+            display: flex; 
+            flex-direction: column; 
+            align-items: center; 
+            margin-top: 35px; 
+            padding-top: 25px; 
+            border-top: 1px solid #f8fafc; 
+        }
+        
+        .secure-info { display: flex; align-items: center; gap: 8px; margin-bottom: 20px; }
+        
+        .status-dot { 
+            width: 8px; 
+            height: 8px; 
+            background: #34c759; 
+            border-radius: 50%; 
+            box-shadow: 0 0 8px rgba(52, 199, 89, 0.4);
+            animation: blink 2s infinite; 
+        }
+        
+        @keyframes blink { 0% { opacity: 1; } 50% { opacity: 0.3; } 100% { opacity: 1; } }
+        
         .secure-text { font-size: 10px; font-weight: 500; color: var(--text-muted); text-transform: uppercase; letter-spacing: 1.5px; }
 
        
-        .logos { display: flex; justify-content: center; align-items: center; gap: 30px; margin-top: 20px; }
-        
+        .logos { display: flex; justify-content: center; align-items: center; gap: 30px; opacity: 0.8; }
         .logo-visa { font-style: italic; font-weight: 800; font-size: 18px; color: #1434CB; letter-spacing: -1px; }
-        
-        .logo-mastercard { display: flex; align-items: center; position: relative; width: 36px; height: 22px; }
-        .circle { width: 22px; height: 22px; border-radius: 50%; position: absolute; }
+        .logo-mastercard { display: flex; align-items: center; position: relative; width: 34px; height: 20px; }
+        .circle { width: 20px; height: 20px; border-radius: 50%; position: absolute; }
         .c1 { background: #EB001B; left: 0; }
         .c2 { background: #F79E1B; right: 0; opacity: 0.9; }
-
         .logo-paypal { color: #003087; font-weight: 700; font-style: italic; font-size: 16px; }
         .logo-paypal span { color: #009CDE; }
 
-        .copyright { margin-top: 45px; font-size: 12px; color: #a3acb9; font-weight: 400; letter-spacing: 0.2px; }
+        .copyright { margin-top: 45px; font-size: 12px; color: #a3acb9; font-weight: 400; }
     </style>
 </head>
 <body>
 
     <div class="container">
         <h1 id="t-title">DuoSub Development Team Support</h1>
-        <p class="subtitle" id="t-subtitle">Help us maintain independence and keep the project free from advertising and subscription fees for everyone.</p>
+        <p class="subtitle" id="t-subtitle">Help us maintain independence and keep the project free from advertising for everyone.</p>
 
         <div class="payment-card">
-            <div class="goal-container">
-                <div class="goal-header">
-                    <span id="t-goal">Development Fund</span>
-                    <span>$420 <span style="color:#a3acb9; font-weight:400">/ $500</span></span>
-                </div>
-                <div class="progress-bg"><div class="progress-bar"></div></div>
+            
+            <div class="status-badge" id="t-status-box">
+                <span id="t-status">Project Infrastructure Active</span>
             </div>
 
             <div class="amount-grid">
@@ -140,22 +166,21 @@
                 <input type="number" id="custom-amount" class="input-field">
             </div>
 
-            <a id="pay-btn" href="https://link.payoneer.com/Token?t=6169EE140F724720A92B9C7B2F922D28&src=pl" onclick="process(this)" class="pay-btn">
+            <a id="pay-btn" href="https://link.payoneer.com/Token?t=FC19CE8010F04306BF7837FB27E9C4EA&src=dpl" onclick="process(this)" class="pay-btn">
                 <span id="t-cta">Continue to Payment</span>
             </a>
 
-            <div class="secure-info">
-                <div class="dot"></div>
-                <span class="secure-text" id="t-footer">Verified Secure via Payoneer</span>
-            </div>
-
-            <div class="logos">
-                <div class="logo-visa">VISA</div>
-                <div class="logo-mastercard">
-                    <div class="circle c1"></div>
-                    <div class="circle c2"></div>
+            <div class="secure-footer">
+                <div class="secure-info">
+                    <div class="status-dot"></div>
+                    <span class="secure-text" id="t-footer">Verified Secure via Payoneer</span>
                 </div>
-                <div class="logo-paypal">Pay<span>Pal</span></div>
+                
+                <div class="logos">
+                    <div class="logo-visa">VISA</div>
+                    <div class="logo-mastercard"><div class="circle c1"></div><div class="circle c2"></div></div>
+                    <div class="logo-paypal">Pay<span>Pal</span></div>
+                </div>
             </div>
         </div>
 
@@ -166,10 +191,9 @@
 
     <script>
         const i18n = {
-            en: { title: "DuoSub Development Team Support", subtitle: "Help us maintain independence and keep the project free from advertising and subscription fees for everyone.", goal: "Development Fund", cta: "Continue to Payment", footer: "Verified Secure via Payoneer", thanks: "Thank you for your support!", loading: "Connecting..." },
-            ru: { title: "Поддержка команды разработки DuoSub", subtitle: "Помогите нам сохранить независимость и оставить проект свободным от рекламы и платных подписок для каждого.", goal: "Фонд разработки", cta: "Перейти к оплате", footer: "Надежный шлюз Payoneer", thanks: "Спасибо за вашу поддержку!", loading: "Соединение..." },
-            es: { title: "Soporte al Equipo de Desarrollo DuoSub", subtitle: "Ayúdanos a mantener la independencia y que el proyecto siga libre de publicidad y cuotas para todos.", goal: "Fondo de Desarrollo", cta: "Continuar al pago", footer: "Seguro vía Payoneer", thanks: "¡Gracias por tu apoyo!", loading: "Cargando..." },
-            zh: { title: "支持 DuoSub 开发团队", subtitle: "助力项目保持独立，让所有人都能永久享受无广告、免订阅的纯净体验。", goal: "开发基金", cta: "继续支付", footer: "通过 Payoneer 安全验证", thanks: "感谢您的支持！", loading: "连接中..." }
+            en: { title: "DuoSub Development Team Support", subtitle: "Help us maintain independence and keep the project free from advertising for everyone.", status: "Project Infrastructure Active", cta: "Continue to Payment", footer: "Verified Secure via Payoneer", thanks: "Thank you for your support!", loading: "Connecting..." },
+            ru: { title: "Поддержка команды разработки DuoSub", subtitle: "Помогите нам сохранить независимость и оставить проект свободным от рекламы для каждого.", status: "Инфраструктура проекта активна", cta: "Перейти к оплате", footer: "Защищенный шлюз Payoneer", thanks: "Спасибо за вашу поддержку!", loading: "Соединение..." },
+            es: { title: "Soporte al Equipo de Desarrollo DuoSub", subtitle: "Ayúdanos a mantener la independencia y que el proyecto siga libre de publicidad.", status: "Infraestructura del Proyecto Activa", cta: "Continuar al pago", footer: "Seguro vía Payoneer", thanks: "¡Gracias por tu apoyo!", loading: "Cargando..." }
         };
 
         function init() {
@@ -183,11 +207,11 @@
             const c = i18n[lang];
             document.getElementById('t-title').innerText = c.title;
             document.getElementById('t-subtitle').innerText = c.subtitle;
-            document.getElementById('t-goal').innerText = c.goal;
+            document.getElementById('t-status').innerText = c.status;
             document.getElementById('t-cta').innerText = c.cta;
             document.getElementById('t-footer').innerText = c.footer;
             document.getElementById('t-thanks').innerText = c.thanks;
-            document.getElementById('custom-amount').placeholder = lang === 'ru' ? 'Сумма' : 'Amount';
+            document.getElementById('custom-amount').placeholder = lang === 'ru' ? 'Ваша сумма' : 'Your amount';
             document.getElementById('current-year').innerText = new Date().getFullYear();
         }
 
