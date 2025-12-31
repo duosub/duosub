@@ -19,6 +19,7 @@ header {
     text-align: center;
 }
 
+/* Navigation */
 nav {
     display: flex;
     justify-content: space-between;
@@ -26,7 +27,16 @@ nav {
     margin-bottom: 3rem;
 }
 
-.logo { font-size: 1.5rem; font-weight: bold; }
+.logo-image {
+    height: 50px;
+    width: auto;
+    display: block;
+    transition: 0.5s;
+}
+
+.logo-link:hover .logo-image {
+    opacity: 0.8;
+}
 
 .btn-top {
     background: var(--primary);
@@ -36,11 +46,23 @@ nav {
     text-decoration: none;
     font-weight: bold;
     margin-left: 10px;
+    transition: 0.3s;
 }
 
+.btn-top:hover {
+    opacity: 0.9;
+}
+
+.btn-outline {
+    background: transparent !important;
+    border: 1px solid var(--primary);
+}
+
+/* Hero Section */
 .hero h1 { font-size: 2.5rem; margin-bottom: 1rem; }
 .hero strong { color: #60a5fa; }
 
+/* Grids & Cards */
 .grid, .install-grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
@@ -56,10 +78,19 @@ nav {
     text-align: center;
 }
 
-section { padding: 3rem 10%; border-bottom: 1px solid #e2e8f0; text-align: center; }
+section { 
+    padding: 3rem 10%; 
+    border-bottom: 1px solid #e2e8f0; 
+    text-align: center; 
+}
 
-h2 { border-bottom: 3px solid var(--primary); display: inline-block; margin-bottom: 1.5rem; }
+h2 { 
+    border-bottom: 3px solid var(--primary); 
+    display: inline-block; 
+    margin-bottom: 1.5rem; 
+}
 
+/* Languages list */
 .lang-list-view {
     font-size: 0.8rem;
     color: var(--dark);
@@ -74,26 +105,29 @@ h2 { border-bottom: 3px solid var(--primary); display: inline-block; margin-bott
     border: 1px solid #e2e8f0;
 }
 
-.btn-download {
+/* Active Buttons */
+.btn-store, .btn-download {
     display: inline-block;
-    background: #10b981;
     color: white;
     padding: 0.8rem 1.5rem;
     border-radius: 6px;
     text-decoration: none;
     font-weight: bold;
     margin-top: 15px;
+    transition: 0.3s;
 }
 
-.btn-disabled {
-    display: inline-block;
-    background: #cbd5e1;
-    color: #64748b;
-    padding: 10px 20px;
-    text-decoration: none;
-    border-radius: 5px;
-    cursor: not-allowed;
-    margin-top: 10px;
+.btn-store {
+    background: var(--primary);
+}
+
+.btn-download {
+    background: #10b981;
+}
+
+.btn-store:hover, .btn-download:hover {
+    filter: brightness(1.1);
+    transform: translateY(-2px);
 }
 
 footer {
@@ -103,6 +137,7 @@ footer {
     text-align: center;
 }
 
+/* Mobile Responsive */
 @media (max-width: 768px) {
     .hero h1 { font-size: 1.8rem; }
     header, section { padding: 2rem 5%; }
